@@ -1,5 +1,11 @@
 class Vigenere{
-    // vigenere cipher
+    
+    /**
+     * Transforms the key to be used for cipher/decipher based on Vigenere cipher
+     * @param {*} keyBuffer The key in a buffer form
+     * @param {*} bufferSize The size of the buffer to be encrypted
+     * @returns Transformed key
+     */
     static generateKey = (keyBuffer, bufferSize) => {
         const initialKeyLength = keyBuffer.length;
         let index = 0;
@@ -13,6 +19,12 @@ class Vigenere{
         return keyBuffer;
     }
 
+    /**
+     * Creating the cipher sequence
+     * @param {*} buffer The buffer to be ciphered
+     * @param {*} keyBuffer The key in a buffer form
+     * @returns ciphered buffer sequence
+     */
     static encrypt = (buffer, keyBuffer) => {    
         // encrpyt vigenere
         const FILE_BUFFER_LENGTH = buffer.length;
@@ -34,6 +46,12 @@ class Vigenere{
         return encryptedBuffer;
     }
 
+    /**
+     * Creating the deciphered sequence
+     * @param {*} buffer The buffer to be deciphered
+     * @param {*} keyBuffer The key in a buffer form
+     * @returns original buffer sequence
+     */
     static decrypt = (buffer, keyBuffer)  => {
         // decrypt vigenere
         const FILE_BUFFER_LENGTH = buffer.length;
