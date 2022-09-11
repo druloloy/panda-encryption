@@ -2,6 +2,10 @@
   "name": "panda-encryption",
   "version": "1.0.0",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "github:druloloy/panda-encryption"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
