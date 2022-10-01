@@ -41,7 +41,7 @@ function unshuffleSync(arr, sequence) {
  * @returns Shuffled array
  */
 function shuffle(arr, sequence) {
-    return Promise.resolve(this.shuffleSync(arr, sequence));
+    return Promise.resolve(shuffleSync(arr, sequence));
 }
 
 /**
@@ -51,7 +51,7 @@ function shuffle(arr, sequence) {
  * @returns Original array
  */
 function unshuffle(arr, sequence) {
-    return Promise.resolve(this.unshuffleSync(arr, sequence));
+    return Promise.resolve(unshuffleSync(arr, sequence));
 }
 
 module.exports = {
