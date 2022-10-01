@@ -1,4 +1,4 @@
-const seedrandom = require('./seedrandom');
+
 
 /**
  * Generates an array of random numbers
@@ -8,10 +8,12 @@ const seedrandom = require('./seedrandom');
  */
 exports.create = (seed, size) => {
     // generate all possible random numbers for the given size
+    const isaac = require('./isaac.js');
+    isaac.seed(seed)
     const randomTable = [];
-    const random = seedrandom(seed);
+    
     let index = 0;
     while(++index <= size)
-        randomTable.push(random());
+        randomTable.push(isaac.random()); 
     return randomTable;
 }
