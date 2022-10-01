@@ -3,5 +3,4 @@ module.exports = {
     Vigenere: require('./panda/libs/vigenere'),
     Shuffler: require('./panda/libs/shuffler'),
     Sequence: require('./panda/libs/sequence'),
-    SeedRandom: require('./panda/libs/seedrandom'),
 };

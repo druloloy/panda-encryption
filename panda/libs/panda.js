@@ -127,12 +127,14 @@ class Panda {
 
     /**
      * Encrypts a buffer using vigenere cipher and shuffles the result using a sequence of random numbers.
-     * @param {*} buffer BufferArray to be encrypted
+     * @param {String | Buffer} buffer BufferArray to be encrypted
      * @param {*} option Option object containing key and seed for the sequence of random numbers default is {key: 'supercalifragilisticexpialidocious', seed: 'default'}
      * @returns encrypted buffer
      */
     static encryptSync(buffer, option = defaultOption) {
         let { key, seed } = option;
+
+        if (typeof buffer === 'string') buffer = Panda.stringToBuffer(buffer);
 
         if (!seed) seed = Panda.bufferToHex(key);
         if (typeof seed !== 'string') seed = Panda.bufferToHex(seed);
@@ -167,12 +169,13 @@ class Panda {
 
     /**
      * Decrypts a buffer using vigenere cipher and shuffles the result using a sequence of random numbers.
-     * @param {*} buffer BufferArray to be decrypted
+     * @param {String | Buffer} buffer BufferArray to be decrypted
      * @param {*} option Option object containing key and seed for the sequence of random numbers default is {key: 'supercalifragilisticexpialidocious', seed: 'default'}
      * @returns decrypted buffer
      */
     static decryptSync(buffer, option = defaultOption) {
         let { key, seed } = option;
+        if (typeof buffer === 'string') buffer = Panda.stringToBuffer(buffer);
 
         if (!seed) seed = Panda.bufferToHex(key);
         if (typeof seed !== 'string') seed = Panda.bufferToHex(seed);
