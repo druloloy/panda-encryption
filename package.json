@@ -1,6 +1,6 @@
 {
   "name": "panda-encryption",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "main": "app.js",
   "repository": {
     "type": "git",
